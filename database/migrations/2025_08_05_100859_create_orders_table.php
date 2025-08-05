@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id('order_id');
+            $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->dateTime('order_date')->useCurrent();
             $table->string('status', 50)->default('Pending');

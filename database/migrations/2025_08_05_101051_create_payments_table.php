@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id('payment_id');
+            $table->id();
             $table->foreignId('order_id')->constrained('orders');
             $table->foreignId('method_id')->constrained('payment_methods');
             $table->foreignId('status_id')->constrained('payment_status');

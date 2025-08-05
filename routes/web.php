@@ -1,7 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiHealthCheckController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ApiHealthCheckController::class, 'index']);

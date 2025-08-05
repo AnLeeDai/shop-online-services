@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id('category_id');
+            $table->id();
             $table->string('name');
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->text('description')->nullable();
@@ -19,7 +19,7 @@ return new class extends Migration {
             $table->timestamps();
 
             $table->foreign('parent_id')
-                ->references('category_id')
+                ->references('id')
                 ->on('categories')
                 ->nullOnDelete();
         });

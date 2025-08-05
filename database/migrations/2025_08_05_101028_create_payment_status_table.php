@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('payment_status', function (Blueprint $table) {
-            $table->id('status_id');
+            $table->id();
             $table->string('status_name', 50)->unique();
             $table->timestamps();
         });

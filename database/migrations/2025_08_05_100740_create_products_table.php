@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id('discount_id');
+            $table->id();
             $table->string('code', 50)->unique();
             $table->enum('discount_type', ['percent', 'fixed']);
             $table->decimal('discount_value', 10, 2);

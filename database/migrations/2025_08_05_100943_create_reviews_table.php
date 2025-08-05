@@ -17,9 +17,11 @@ return new class extends Migration {
             $table->unsignedTinyInteger('rating');
             $table->text('comment')->nullable();
             $table->timestamps();
-
-            $table->check('rating >= 1 and rating <= 5');
         });
+
+        DB::statement('ALTER TABLE reviews
+               ADD CONSTRAINT chk_rating
+               CHECK (rating BETWEEN 1 AND 5)');
     }
 
     /**

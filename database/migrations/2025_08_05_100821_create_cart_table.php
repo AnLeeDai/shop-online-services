@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('cart', function (Blueprint $table) {
-            $table->id('cart_id');
+            $table->id();
             $table->foreignId('user_id')->unique()->constrained('users');
             $table->timestamps();
         });
